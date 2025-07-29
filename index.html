@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="sw">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MUSSA FASHION - Jezi Mpya 2024/2026</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+      color: #fff;
+    }
+    header {
+      background-color: #111;
+      padding: 20px;
+      text-align: center;
+      color: gold;
+      animation: move 4s infinite alternate;
+    }
+    @keyframes move {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(10px); }
+    }
+    .container {
+      padding: 30px;
+      max-width: 800px;
+      margin: auto;
+    }
+    h1, h2 {
+      text-align: center;
+      color: #FFD700;
+    }
+    p {
+      line-height: 1.6;
+    }
+    .products {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+    }
+    .card {
+      background: #fff;
+      color: #000;
+      width: 240px;
+      margin: 15px;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      text-align: center;
+    }
+    .card img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+    }
+    form {
+      margin-top: 40px;
+      background: #fff;
+      padding: 20px;
+      border-radius: 15px;
+      color: #000;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+    }
+    button {
+      background: green;
+      color: #fff;
+      padding: 12px;
+      border: none;
+      border-radius: 10px;
+      font-size: 18px;
+      cursor: pointer;
+      width: 100%;
+    }
+    button:hover {
+      background: darkgreen;
+    }
+    footer {
+      margin-top: 30px;
+      text-align: center;
+      font-size: 14px;
+    }
+    .price-display {
+      font-weight: bold;
+      font-size: 18px;
+      color: green;
+      margin: 10px 0;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>MUSSA FASHION ⚽</h1>
+    <p>Jezi Original za Msimu 2024/2025 & 2025/2026 • Ubungo, Masala – Dar es Salaam</p>
+  </header>
+
+  <div class="container">
+    <h2>Jezi zote zinapatikana</h2>
+    <div class="products">
+      <div class="card">
+        <img src="/home/lesnedy/Documents/IMG-20250728-WA0015.jpg" alt="psg">
+      </div>
+      <div class="card">
+        <img src="/home/lesnedy/Documents/IMG-20250728-WA0013.jpg" alt="Arsenal Kit">
+      </div>
+      <div class="card">
+        <img src="/home/lesnedy/Documents/IMG-20250728-WA0005.jpg" alt="Manchester United Away Kit">
+      </div>
+      <div class="card">
+        <img src="/home/lesnedy/Documents/IMG-20250728-WA0004.jpg" alt="Manchester United Away Kit">
+      </div>
+    </div>
+
+    <h2>Weka Oda Yako</h2>
+    <form id="orderForm">
+      <label>Jina Kamili:</label>
+      <input type="text" id="name" placeholder="Ingiza jina lako" required>
+
+      <label>Timu Unayotaka:</label>
+      <select id="team" required>
+        <option value="">--Chagua--</option>
+        <option>Liverpool</option>
+        <option>Arsenal</option>
+        <option>Manchester United</option>
+        <option>Yanga SC</option>
+        <option>Simba SC</option>
+        <option>Real Madrid</option>
+      </select>
+
+      <label>Msimu wa Jezi:</label>
+      <select id="season" required>
+        <option value="">--Chagua--</option>
+        <option value="2024/2025">2024/2025</option>
+        <option value="2025/2026">2025/2026</option>
+      </select>
+
+      <label>Kiwango (Grade):</label>
+      <select id="grade" required>
+        <option value="">--Chagua--</option>
+        <option value="A">Grade A</option>
+        <option value="B">Grade B</option>
+      </select>
+
+      <!-- Price Display -->
+      <p class="price-display">Bei ya moja Jezi: <span id="priceDisplay">Chagua msimu na grade</span> TZS</p>
+
+      <label>Namba ya Mchezaji (mgongoni):</label>
+      <input type="text" id="number" placeholder="Mfano: 7 au Ronaldo">
+
+      <label>Kiasi Unachotaka (pcs):</label>
+      <input type="number" id="quantity" placeholder="Mfano: 2" required>
+
+      <label>Maelezo ya Ziada:</label>
+      <textarea id="notes" placeholder="Maelezo yoyote ya ziada..."></textarea>
+
+      <button type="submit">Tuma Oda WhatsApp</button>
+    </form>
+
+    <footer>
+      <p>📞 Mawasiliano: <strong>0767 116 542</strong> | 📧 Email: steveiemmanuelmussa@gmail.com</p>
+      <p>&copy; 2025 MUSSA FASHION. All Rights Reserved.</p>
+    </footer>
+  </div>
+
+  <script>
+    function updatePriceDisplay() {
+      const season = document.getElementById('season').value;
+      const grade = document.getElementById('grade').value;
+      const priceDisplay = document.getElementById('priceDisplay');
+
+      let price = 0;
+      if (season === '2025/2026' && grade === 'A') price = 25000;
+      else if (season === '2025/2026' && grade === 'B') price = 11000;
+      else if (season === '2024/2025' && grade === 'A') price = 20000;
+      else if (season === '2024/2025' && grade === 'B') price = 10000;
+
+      if (price > 0) {
+        priceDisplay.textContent = price.toLocaleString();
+      } else {
+        priceDisplay.textContent = 'Chagua msimu na grade';
+      }
+    }
+
+    document.getElementById('season').addEventListener('change', updatePriceDisplay);
+    document.getElementById('grade').addEventListener('change', updatePriceDisplay);
+
+    document.getElementById('orderForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const name = document.getElementById('name').value;
+      const team = document.getElementById('team').value;
+      const season = document.getElementById('season').value;
+      const grade = document.getElementById('grade').value;
+      const number = document.getElementById('number').value;
+      const quantity = parseInt(document.getElementById('quantity').value);
+      const notes = document.getElementById('notes').value;
+
+      let price = 0;
+      if (season === '2025/2026' && grade === 'A') price = 25000;
+      else if (season === '2025/2026' && grade === 'B') price = 11000;
+      else if (season === '2024/2025' && grade === 'A') price = 20000;
+      else if (season === '2024/2025' && grade === 'B') price = 10000;
+
+      const total = price * quantity;
+
+      const message = `Hello MUSSA FASHION 👕%0A%0AOda Mpya:%0A-------------------%0AJina: ${name}%0ATimu: ${team}%0AMsimu: ${season}%0AKiwango: Grade ${grade}%0ANamba ya Jezi: ${number}%0AIdadi: ${quantity}%0AJumla ya Malipo: ${total} TZS%0AMaelezo: ${notes}%0A%0ATafadhali nitumie maelezo zaidi.`;
+
+      const whatsappLink = `https://wa.me/255767116542?text=${encodeURI(message)}`;
+      window.open(whatsappLink, '_blank');
+    });
+  </script>
+</body>
+</html>
