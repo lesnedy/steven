@@ -35,26 +35,6 @@
     p {
       line-height: 1.6;
     }
-    .products {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-around;
-    }
-    .card {
-      background: #fff;
-      color: #000;
-      width: 240px;
-      margin: 15px;
-      border-radius: 15px;
-      overflow: hidden;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-      text-align: center;
-    }
-    .card img {
-      width: 100%;
-      height: 250px;
-      object-fit: cover;
-    }
     form {
       margin-top: 40px;
       background: #fff;
@@ -94,6 +74,16 @@
       color: green;
       margin: 10px 0;
     }
+    .animated-text {
+      animation: pulse 2s infinite;
+      color: #FFD700;
+      text-shadow: 0 0 10px rgba(255,215,0,0.5);
+    }
+    @keyframes pulse {
+      0% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.05); opacity: 0.9; }
+      100% { transform: scale(1); opacity: 1; }
+    }
   </style>
 </head>
 <body>
@@ -103,21 +93,10 @@
   </header>
 
   <div class="container">
-    <h2>Jezi zote zinapatikana</h2>
-    <div class="products">
-      <div class="card">
-        <img src="/home/lesnedy/Documents/IMG-20250728-WA0015.jpg" alt="psg">
-      </div>
-      <div class="card">
-        <img src="/home/lesnedy/Documents/IMG-20250728-WA0013.jpg" alt="Arsenal">
-      </div>
-      <div class="card">
-        <img src="/home/lesnedy/Documents/IMG-20250728-WA0005.jpg" alt="Manchester United">
-      </div>
-      <div class="card">
-        <img src="<img src="/home/lesnedy/Documents/image.jpg">" alt="Manchester United">
-      </div>
-    </div>
+    <h2 class="animated-text">🔥 Jezi Mpya za Timu Zinapatikana Hapa! 🔥</h2>
+    <p style="text-align:center; font-size:18px; margin-top:-10px;">
+      Chagua Timu Unayoipenda, Msimu, na Daraja kisha weka oda yako kwa urahisi!
+    </p>
 
     <h2>Weka Oda Yako</h2>
     <form id="orderForm">
@@ -150,7 +129,7 @@
       </select>
 
       <!-- Price Display -->
-      <p class="price-display">Bei ya moja Jezi: <span id="priceDisplay">Chagua msimu na grade</span> TZS</p>
+      <p class="price-display">Bei ya Jezi: <span id="priceDisplay">Chagua msimu na grade</span> TZS</p>
 
       <label>Namba ya Mchezaji (mgongoni):</label>
       <input type="text" id="number" placeholder="Mfano: 7 au Ronaldo">
