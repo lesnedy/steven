@@ -179,7 +179,7 @@
       const grade = document.getElementById('grade').value;
       const number = document.getElementById('number').value;
       const quantity = parseInt(document.getElementById('quantity').value);
-      const notes = document.getElementById('notes').value;
+      const notes = document.getElementById('notes').value || 'Hakuna';
 
       let price = 0;
       if (season === '2025/2026' && grade === 'A') price = 25000;
@@ -189,7 +189,7 @@
 
       const total = price * quantity;
 
-      const message = `Hello MUSSA FASHION 👕%0A%0AOda Mpya:%0A-------------------%0AJina: ${name}%0ATimu: ${team}%0AMsimu: ${season}%0AKiwango: Grade ${grade}%0ANamba ya Jezi: ${number}%0AIdadi: ${quantity}%0AJumla ya Malipo: ${total} TZS%0AMaelezo: ${notes}%0A%0ATafadhali nitumie maelezo zaidi.`;
+      const message = `Hello MUSSA FASHION 👕%0A%0AOda Mpya:%0A-------------------%0AJina: ${name}%0ATimu: ${team}%0AMsimu: ${season}%0AKiwango: Grade ${grade}%0ANamba ya Jezi: ${number}%0AIdadi: ${quantity}%0AJumla ya Malipo: ${total.toLocaleString()} TZS%0AMaelezo: ${notes}%0A%0ATafadhali nitumie maelezo zaidi.`;
 
       const whatsappLink = `https://wa.me/255767116542?text=${encodeURI(message)}`;
       window.open(whatsappLink, '_blank');
